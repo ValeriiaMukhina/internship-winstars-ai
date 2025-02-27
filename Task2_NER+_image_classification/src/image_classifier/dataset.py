@@ -2,6 +2,7 @@ import torch
 from torchvision import transforms, datasets
 from torch.utils.data import DataLoader
 import random
+
 def get_animals10(data_dir='data/animals10/raw-img', batch_size=32):
   
     transform = transforms.Compose([

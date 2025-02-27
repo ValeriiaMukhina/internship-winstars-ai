@@ -62,10 +62,8 @@ def train_ner(
         data_collator=DataCollatorForTokenClassification(ner_model.tokenizer)
     )
     
-    # Train model
     trainer.train()
     
-    # Save model
     trainer.save_model(final_model_path)
     
     return final_model_path
