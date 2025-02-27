@@ -11,21 +11,33 @@ The pipeline consists of two models responsible for different tasks:
 The main goal is to understand what the user is asking (NLP) and check if they are correct (Computer Vision).
 
 
-## Setup and Installation
+## Setup Instructions
 
-1. Clone the repository
-2. Install dependencies:
-   ```
-   pip install -r requirements.txt
-   ```
-3. Download the Animals-10 dataset (or use your own dataset)
+1. Clone the repository:
+```bash
+git clone https://github.com/ValeriiaMukhina/internship-winstars-ai.git
+cd Task2_NER+_image_classification/
+```
+2. Create a virtual environment:
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+3. Install dependencies:
+```bash
+pip install -r requirements.txt
+```
+4. Download the Animals-10 dataset (or use your own dataset)  
 If you want to train the model for Image Classification part, download dataset Animals10 from 
 https://drive.google.com/drive/folders/1BvGcyRhDOA4UyFLfqQhu5pA0vKHq8CAU?usp=sharing
-and put in Task2_NER+_image_classification/data/
-
-4. If you want to run inference, please download ready models from 
+and put in `Task2_NER+_image_classification/data/`
+5. If you want to run inference, please download ready models from 
 https://drive.google.com/drive/folders/1BvGcyRhDOA4UyFLfqQhu5pA0vKHq8CAU?usp=sharing
-and put them in Task2_NER+_image_classification/models/
+and put them in `Task2_NER+_image_classification/models/`
+6. Run the demo notebook:
+```bash
+jupyter notebook demo.ipynb
+```
 
 ## Model Architecture
 
@@ -35,6 +47,7 @@ The image classification model uses a VGG16 architecture pretrained on ImageNet 
   - Flatten layer
   - Dense layer with 256 units and ReLU activation
   - Output layer with 10 units and softmax activation
+
 The model is trained on the Animals-10 dataset, which contains 10 classes of animals:
 - Dog
 - Horse
@@ -47,7 +60,7 @@ The model is trained on the Animals-10 dataset, which contains 10 classes of ani
 - Squirrel
 - Spider
 
-The NER component uses fine-tuned BERT model (bert-base-uncased) adapted for token classification
+The NER component uses fine-tuned BERT model (`bert-base-uncased`) adapted for token classification
 - Binary sequence labeling (0 for non-animal tokens, 1 for animal tokens)
 - Input: Raw text, which is tokenized and processed to match the model's requirements
 - Output: List of extracted animal entities found in the text
