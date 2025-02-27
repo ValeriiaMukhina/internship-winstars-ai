@@ -32,7 +32,7 @@ source venv/bin/activate  # On Windows: venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-4. Or run the demo notebook:
+4. Run the demo notebook:
 ```bash
 jupyter notebook mnist_demo.ipynb
 ```
@@ -68,8 +68,9 @@ The `MnistClassifierInterface` defines two abstract methods:
 
 1. **Random Forest**: Uses scikit-learn's RandomForestClassifier to provide a fast, tree-based approach.
 2. **Neural Network**: Implements a simple feed-forward network using PyTorch with one hidden layer.
-3. **CNN**: 
+3. **CNN**
 
+#### CNN details
 The CNNs in this kernel follow LeNet5's design with the following improvements:
 
 - Two stacked 3x3 filters replace the single 5x5 filters. These become nonlinear 5x5 convolutions 
