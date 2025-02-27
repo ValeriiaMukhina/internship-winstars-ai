@@ -17,8 +17,8 @@ This project implements different classification models for the MNIST dataset us
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/mnist-classifier.git
-cd mnist-classifier
+git clone https://github.com/ValeriiaMukhina/internship-winstars-ai.git
+cd Task1_Image_Classification/
 ```
 
 2. Create a virtual environment:
@@ -72,8 +72,16 @@ The `MnistClassifierInterface` defines two abstract methods:
 
 The CNNs in this kernel follow LeNet5's design with the following improvements:
 
-Two stacked 3x3 filters replace the single 5x5 filters. These become nonlinear 5x5 convolutions A convolution with stride 2 replaces pooling layers. These become learnable pooling layers. ReLU activation replaces sigmoid. Batch normalization is added Dropout is added More feature maps (channels) are added
-Given Architecture Explanation Input size: 28x28 (which corresponds to 784 flattened, but we keep it as a 2D tensor) First block: 32C3-32C3-32C5S2 32 Conv filters (3x3) 32 Conv filters (3x3) 32 Conv filters (5x5, stride=2, same padding) Second block: 64C3-64C3-64C5S2 64 Conv filters (3x3) 64 Conv filters (3x3) 64 Conv filters (5x5, stride=2, same padding) Fully connected layers: 128 - 10 Other features: Batch Normalization after each convolution Dropout (40%) after pooling layers Activation function: ReLU Output activation: Softmax (handled in loss function)
+- Two stacked 3x3 filters replace the single 5x5 filters. These become nonlinear 5x5 convolutions 
+- A convolution with stride 2 replaces pooling layers. These become learnable pooling layers. 
+- ReLU activation replaces sigmoid. 
+- Batch normalization is added 
+- Dropout is added More feature maps (channels) are added
+Given Architecture Explanation 
+- Input size: 28x28 (which corresponds to 784 flattened, but we keep it as a 2D tensor) 
+- First block: 32C3-32C3-32C5S2 32 Conv filters (3x3) 32 Conv filters (3x3) 32 Conv filters (5x5, stride=2, same padding) 
+- Second block: 64C3-64C3-64C5S2 64 Conv filters (3x3) 64 Conv filters (3x3) 64 Conv filters (5x5, stride=2, same padding) 
+- Fully connected layers: 128 - 10 
 ### Wrapper Class
 
 The `MnistClassifier` class instantiates the appropriate implementation based on the algorithm name provided at initialization. It exposes the same train and predict methods as defined in the interface.
